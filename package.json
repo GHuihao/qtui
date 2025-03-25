@@ -12,12 +12,29 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [
+    "commands": [],
+    "customEditors": [
       {
-        "command": "qtui.helloWorld",
-        "title": "Hello World"
+        "viewType": "qtui.qtuiScratch",
+        "displayName": "qtui",
+        "selector": [
+          {
+            "filenamePattern": "*.ui"
+          }
+        ],
+        "priority": "default"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "qtui",
+      "properties": {
+        "qtui.designerPath": {
+          "type": "string",
+          "description": "qt designer path",
+          "default": "designer.exe"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -31,17 +48,20 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.98.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
-    "eslint": "^9.21.0",
-    "typescript": "^5.7.3",
-    "ts-loader": "^9.5.2",
-    "webpack": "^5.98.0",
-    "webpack-cli": "^6.0.1",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.21.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "vsce": "^2.15.0"
   }
 }
