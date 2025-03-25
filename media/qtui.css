@@ -1,0 +1,27 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+.add-button{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.add-button button{
+	width: 150px;
+	height: 75px;
+}
+.cfg{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	white-space: nowrap;
+}
+
+.cfg input[type="file"]{
+	display: none;
+}
