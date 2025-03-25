@@ -3,12 +3,18 @@
   "displayName": "qtui",
   "description": "open designer",
   "version": "0.0.1",
+  "author":"hhao",
+  "publisher": "hhao",
   "engines": {
     "vscode": "^1.98.0"
   },
   "categories": [
     "Other"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:GHuihao/qtui.git"
+  },
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
