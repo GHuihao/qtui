@@ -2,8 +2,8 @@
   "name": "qtui",
   "displayName": "qtui",
   "description": "open designer",
-  "version": "0.0.1",
-  "author":"hhao",
+  "version": "0.0.2",
+  "author": "hhao",
   "publisher": "hhao",
   "engines": {
     "vscode": "^1.98.0"
@@ -18,19 +18,30 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [],
-    "customEditors": [
+    "commands": [
       {
-        "viewType": "qtui.qtuiScratch",
-        "displayName": "qtui",
-        "selector": [
-          {
-            "filenamePattern": "*.ui"
-          }
-        ],
-        "priority": "default"
+        "command": "qtui.openDesigner",
+        "title": "Designer 中打开",
+        "category": "qtui"
       }
     ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "qtui.openDesigner",
+          "when": "resourceExtname == .ui",
+          "group": "navigation"
+        }
+      ],
+      
+      "explorer/context": [
+        {
+          "command": "qtui.openDesigner",
+          "when": "resourceExtname == .ui",
+          "group": "navigation"
+        }
+      ]
+    },
     "configuration": {
       "title": "qtui",
       "properties": {
